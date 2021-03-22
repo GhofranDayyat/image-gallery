@@ -57,7 +57,7 @@ $('#filteration').on('change', function(event) {
       console.log(allGalleryImg);
       if (allGalleryImg[i].keyword === conceptName) {
         $('#photo-tem').css('display', 'none')
-        let titleEl = $('<h1></h1>').text(`${allGalleryImg[i].title}  ${allGalleryImg[i].horns}`)
+        let titleEl = $('<h1></h1>').text(`${allGalleryImg[i].title}  ${allGalleryImg[i].horns}`);
         let imageEl = $(`<img src="" alt="">`).attr({'src': allGalleryImg[i].image_url, 'width': '200px', 'height': '200px'})
         let descEl = $('<p></p>').text(allGalleryImg[i].image_description);
         $('#photo-tem2').append(titleEl, imageEl, descEl );
