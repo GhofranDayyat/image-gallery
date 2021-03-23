@@ -30,7 +30,7 @@ const ajaxSetting = {
 };
 
 let arrOption=[];
-$.ajax('../data/page-1.json',ajaxSetting).then((data)=>{
+$.ajax('data/page-1.json',ajaxSetting).then((data)=>{
   data.forEach(element =>{
     let newhorn= new Image(element);
     console.log(newhorn);
