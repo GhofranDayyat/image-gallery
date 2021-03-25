@@ -163,12 +163,12 @@ $('#page2').on('click', function() {
     $('.filter2').remove();
     $('.animal2').remove();
     arrImage2.sort(function(a, b){
-      let aTit = a.title.toLowerCase();
-      let bTit = b.title.toLowerCase();
-      if (aTit < bTit) {
+      // let aTit = ;
+      // let bTit = ;
+      if (a.title.toLowerCase() < b.title.toLowerCase()) {
         return -1;
       }
-      if (aTit > bTit) {
+      if (a.title.toLowerCase() > b.title.toLowerCase()) {
         return 1;
       }
       return 0;
@@ -196,12 +196,10 @@ $('#title').change('click', function() {
   $('.filter1').remove();
   $('.animal1').remove();
   arrImage1.sort(function(a, b){
-    let fa = a.title.toLowerCase();
-    let fb = b.title.toLowerCase();
-    if (fa < fb) {
+    if (a.title.toLowerCase() < b.title.toLowerCase()) {
       return -1;
     }
-    if (fa > fb) {
+    if (a.title.toLowerCase() > b.title.toLowerCase()) {
       return 1;
     }
     return 0;
