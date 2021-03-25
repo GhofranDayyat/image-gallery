@@ -25,10 +25,10 @@
         <button id="page2">Page2</button>
         <section>
             <select id="filteration1">
-                <option id="opt1" value="default">Filter by Keyword</option>
+                <option id="opt1" value="default" class="filter1">Filter by Keyword</option>
            </select>
            <select id="filteration2">
-            <option id="opt2" value="default">Filter by Keyword</option>
+            <option id="opt2" value="default"  class="filter2" >Filter by Keyword</option>
        </select>
         </section>
         
@@ -38,7 +38,7 @@
         
         <section id="img-temp">
                 <template id="horn-template1" type="text/x-tmpl-mustache">
-                    <div id="unit1" class="{{keyword}}">
+                    <div id="unit1" class="animal1 {{keyword}}">
                     <h2>{{title}} #{{horns}}</h2>
                     <img src="{{image_url}}" alt="">
                     <p>{{image_description}}</p>
@@ -47,7 +47,7 @@
                 </section>
         <section id="mastachsec">
             <template id="horn-template2" type="text/x-tmpl-mustache">
-            <div id="unit2" class="{{keyword}}">
+            <div id="unit2" class="animal1 {{keyword}}">
             <h1>{{title}} #{{horns}}</h1>
             <img src="{{image_url}}" alt="">
             <p>{{image_description}}</p>

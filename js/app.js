@@ -112,7 +112,7 @@ $.ajax('data/page-2.json', ajaxSetiings1).then((data) => {
 $('#filteration2').change(function() {
   console.log(this.value);
   arrImage2.forEach((element)=>{
-    console.log(element.keyword);
+    // console.log(element.keyword);
     if (this.value === element.keyword){
       $(`.${element.keyword}`).show();
     }else if (element.keyword !== this.value){
@@ -139,7 +139,6 @@ $('#page1').on('click', function() {
   $('#img-temp').show();
   $('#filteration2').hide();
 
- 
 });
 
 
@@ -151,22 +150,63 @@ $('#page2').on('click', function() {
   $('#mastachsec').show();
   $('#filteration1').hide();
 
+  $('#horns').change('click', function() {
+    $('.filter2').remove();
+    $('.animal2').remove();
+    arrImage2.sort(function(a, b){return a.horns - b.horns;});
+    arrImage2.forEach(element => {
+      element.renderWithMustache();
+    });
+  });
+
+  $('#title').change('click', function() {
+    $('.filter2').remove();
+    $('.animal2').remove();
+    arrImage2.sort(function(a, b){
+      let aTit = a.title.toLowerCase();
+      let bTit = b.title.toLowerCase();
+      if (aTit < bTit) {
+        return -1;
+      }
+      if (aTit > bTit) {
+        return 1;
+      }
+      return 0;
+    });
+
+    arrImage2.forEach(element => {
+      element.renderWithMustache();
+    });
+  });
 });
 
 
 //-------horns sort page1 ---------------//
-$('#horns').on('click', function() {
-  $('#img-temp').empty();
-  $('#mastachsec').empty();
+$('#horns').change('click', function() {
+  $('.filter1').remove();
+  $('.animal1').remove();
   arrImage1.sort(function(a, b){return a.horns - b.horns;});
-  newhorn.renderAuto();
+  arrImage1.forEach(element => {
+    element.renderAuto();
+  });
 });
 
 
-//-------horns sort page2 ---------------//
-$('#horns').on('click', function() {
-  $('#img-temp').empty();
-  $('#mastachsec').empty();
-  arrImage1.sort(function(a, b){return a.horns - b.horns;});
-  newhorn2.renderAuto();
+$('#title').change('click', function() {
+  $('.filter1').remove();
+  $('.animal1').remove();
+  arrImage1.sort(function(a, b){
+    let fa = a.title.toLowerCase();
+    let fb = b.title.toLowerCase();
+    if (fa < fb) {
+      return -1;
+    }
+    if (fa > fb) {
+      return 1;
+    }
+    return 0;
+  });
+  arrImage1.forEach(element => {
+    element.renderAuto();
+  });
 });
