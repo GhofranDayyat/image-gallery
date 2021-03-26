@@ -17,36 +17,47 @@
 <body>
     <header>
         <h1 class="title">The Gallery of Horns</h1>
-        <section>
-            <select id="filteration">
-                <option id="opt" value="default">Filter by Keyword</option>
+        <section class="form">
+            <section id="stor">
+                <label for="title" > Sort By Title</label>
+                <input type="radio" name="Sort" id="title" value="title" >
+                <label for="horns" > Sort By Horns</label>
+                <input type="radio" name="Sort" id="horns" value="horns">
+            </section>
+            <button id="page1">Page1</button>
+            <button id="page2">Page2</button>
+   
+                <select id="filteration1">
+                    <option id="opt1" value="default" class="filter1">Filter by Keyword</option>
+               </select>
+               <select id="filteration2">
+                <option id="opt2" value="default"  class="filter2" >Filter by Keyword</option>
             </select>
+     
         </section>
-        <section>
-            <div id="page1">
-            
-            </div>
-            <div id="page2">
-            
-            </div>
-        </section>
+        
+        
     </header>
     <main>
+        
         <section id="img-temp">
-            <div id="unit">
-                <h2></h2>
-                <img src="" alt="">
-                <p></p>
+                <template id="horn-template1" type="text/x-tmpl-mustache">
+                    <div id="unit1" class="animal1 {{keyword}}">
+                    <h2>{{title}} #{{horns}}</h2>
+                    <img src="{{image_url}}" alt="">
+                    <p>{{image_description}}</p>
+                    </div>
+                </template>
+                </section>
+        <section id="mastachsec">
+            <template id="horn-template2" type="text/x-tmpl-mustache">
+            <div id="unit2" class="animal1 {{keyword}}">
+            <h2>{{title}} #{{horns}}</h2>
+            <img src="{{image_url}}" alt="">
+            <p>{{image_description}}</p>
             </div>
-        <template id="neighborhood-template" type="text/x-tmpl-mustache">
-        <div>
-          <h2>{{title}}</h2>
-          <img src="{{image_url}}" alt="{{title}}">
-          <p>{{description}}</p>
-        </div>
         </template>
         </section>
-
     </main>
     <footer>&copy 2018 Code Fellows</footer>
 </body>
