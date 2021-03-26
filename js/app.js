@@ -149,10 +149,14 @@ $('#page2').on('click', function() {
   $('#img-temp').hide();
   $('#mastachsec').show();
   $('#filteration1').hide();
+  $('.filter2').hide();
+  $('.animal2').hide();
+
+  if($('#horns').is(':checked')) { 
+    $('#horns').prop('checked', false);
+  }
 
   $('#horns').change('click', function() {
-    $('.filter2').remove();
-    $('.animal2').remove();
     arrImage2.sort(function(a, b){return a.horns - b.horns;});
     arrImage2.forEach(element => {
       element.renderWithMustache();
@@ -160,8 +164,7 @@ $('#page2').on('click', function() {
   });
 
   $('#title').change('click', function() {
-    $('.filter2').remove();
-    $('.animal2').remove();
+
     arrImage2.sort(function(a, b){
       // let aTit = ;
       // let bTit = ;
@@ -177,6 +180,9 @@ $('#page2').on('click', function() {
     arrImage2.forEach(element => {
       element.renderWithMustache();
     });
+  });
+  arrImage2.forEach(element => {
+    element.renderWithMustache();
   });
 });
 

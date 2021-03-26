@@ -17,19 +17,23 @@
 <body>
     <header>
         <h1 class="title">The Gallery of Horns</h1>
-        <label for="title" > Sort By Title</label>
-        <input type="radio" name="Sort" id="title" value="title" >
-        <label for="horns" > Sort By Horns</label>
-        <input type="radio" name="Sort" id="horns" value="horns">
-        <button id="page1">Page1</button>
-        <button id="page2">Page2</button>
-        <section>
-            <select id="filteration1">
-                <option id="opt1" value="default" class="filter1">Filter by Keyword</option>
-           </select>
-           <select id="filteration2">
-            <option id="opt2" value="default"  class="filter2" >Filter by Keyword</option>
-       </select>
+        <section class="form">
+            <section id="stor">
+                <label for="title" > Sort By Title</label>
+                <input type="radio" name="Sort" id="title" value="title" >
+                <label for="horns" > Sort By Horns</label>
+                <input type="radio" name="Sort" id="horns" value="horns">
+            </section>
+            <button id="page1">Page1</button>
+            <button id="page2">Page2</button>
+   
+                <select id="filteration1">
+                    <option id="opt1" value="default" class="filter1">Filter by Keyword</option>
+               </select>
+               <select id="filteration2">
+                <option id="opt2" value="default"  class="filter2" >Filter by Keyword</option>
+            </select>
+     
         </section>
         
         
@@ -48,7 +52,7 @@
         <section id="mastachsec">
             <template id="horn-template2" type="text/x-tmpl-mustache">
             <div id="unit2" class="animal1 {{keyword}}">
-            <h1>{{title}} #{{horns}}</h1>
+            <h2>{{title}} #{{horns}}</h2>
             <img src="{{image_url}}" alt="">
             <p>{{image_description}}</p>
             </div>
