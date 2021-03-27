@@ -155,7 +155,9 @@ $('#page2').on('click', function() {
   if($('#horns').is(':checked')) { 
     $('#horns').prop('checked', false);
   }
-
+  if($('#title').is(':checked')) { 
+    $('#title').prop('checked', false);
+  }
   $('#horns').change('click', function() {
     arrImage2.sort(function(a, b){return a.horns - b.horns;});
     arrImage2.forEach(element => {
@@ -166,8 +168,6 @@ $('#page2').on('click', function() {
   $('#title').change('click', function() {
 
     arrImage2.sort(function(a, b){
-      // let aTit = ;
-      // let bTit = ;
       if (a.title.toLowerCase() < b.title.toLowerCase()) {
         return -1;
       }
