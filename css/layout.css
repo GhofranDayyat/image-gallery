@@ -31,7 +31,7 @@ main {
 #img-temp,#mastachsec{
   display: flex;
   flex-wrap: wrap;
-  justify-content:  center;
+  justify-content: left;
   align-self: auto;
 }
 
@@ -52,6 +52,7 @@ color: #008080;
 }
 
 #stor{
+  
   margin-bottom: 40px;
   display: flex;
 display: flex;
@@ -67,5 +68,8 @@ color: #008080;
 }
 
 .form{
+  padding: 5%;
+  border: 3px solid #008080;
+
   display: inline-block;
 }
